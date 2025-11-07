@@ -1,0 +1,566 @@
+/* Custom CSS for Mayra Márquez Website */
+
+:root {
+    --primary-color: #93D4AE;
+    --secondary-color: #7BC89A;
+    --accent-color: #A8E6C1;
+    --primary-dark: #6BB88F;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --bg-light: #f9fafb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+/* Navigation */
+.navbar {
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    text-decoration: none;
+}
+
+.navbar-brand .d-flex {
+    line-height: 1.2;
+}
+
+.navbar-brand small {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-light) !important;
+    margin-top: -2px;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 80%;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1920&q=80') center/cover;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(240, 253, 244, 0.95) 0%, rgba(220, 252, 231, 0.95) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    z-index: 2;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.hero-features {
+    font-size: 1.1rem;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+.scroll-indicator a {
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+/* Section Spacing */
+section {
+    padding: 5rem 0;
+}
+
+/* Service Cards */
+.service-card {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    border-color: var(--primary-color);
+}
+
+.service-icon {
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1);
+}
+
+/* Method Section */
+.method-item {
+    transition: all 0.3s ease;
+}
+
+.method-item:hover {
+    transform: translateX(10px);
+}
+
+.method-number .badge {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+/* Stats Section */
+.stat-item {
+    padding: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Cards */
+.contact-card {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    border-color: var(--primary-color);
+}
+
+.contact-icon {
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Footer CTA Section */
+.footer-cta {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1920&q=80') center/cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.footer-cta .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer Main */
+.footer-main {
+    background: linear-gradient(180deg, #1a3a2e 0%, #0f2419 100%);
+    position: relative;
+}
+
+.footer-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    opacity: 0.5;
+}
+
+.footer-brand h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+}
+
+.footer-social h6 {
+    color: #e5e7eb;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 5px 15px rgba(147, 212, 174, 0.4);
+}
+
+.social-icon.instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    border-color: #bc1888;
+    box-shadow: 0 5px 15px rgba(188, 24, 136, 0.4);
+}
+
+.social-icon.whatsapp:hover {
+    background: #25d366;
+    border-color: #25d366;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+}
+
+.social-icon.email:hover {
+    background: #ea4335;
+    border-color: #ea4335;
+    box-shadow: 0 5px 15px rgba(234, 67, 53, 0.4);
+}
+
+/* Hero Image Placeholder */
+.hero-image-placeholder {
+    border: 3px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.hero-image-placeholder:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(147, 212, 174, 0.3) !important;
+}
+
+.social-icon i {
+    font-size: 1.2rem;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-link {
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 0.25rem 0;
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.footer-link:hover {
+    color: var(--primary-color) !important;
+    transform: translateX(5px);
+    padding-left: 5px;
+}
+
+.footer-link:hover i {
+    color: var(--primary-color) !important;
+}
+
+.footer-link i {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-features li {
+    transition: transform 0.3s ease;
+}
+
+.footer-features li:hover {
+    transform: translateX(5px);
+}
+
+.footer-features strong {
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.footer-features small {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-main h6 {
+    color: #ffffff !important;
+}
+
+.footer-main .text-white-50 {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.footer-bottom .text-danger {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-cta .display-6 {
+        font-size: 1.75rem;
+    }
+    
+    .footer-cta .btn {
+        width: 100%;
+    }
+    
+    .footer-brand h4 {
+        font-size: 1.5rem;
+    }
+    
+    .social-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Button Hover Effects */
+.btn {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+}
+
+/* Badge Styles */
+.badge {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Text Utilities */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+/* Override Bootstrap primary colors */
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: white !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.badge.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+/* Animation on Scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: auto;
+        padding: 100px 0 50px;
+    }
+    
+    .display-3 {
+        font-size: 2.5rem;
+    }
+    
+    .display-5 {
+        font-size: 2rem;
+    }
+    
+    section {
+        padding: 3rem 0;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Tablet Optimizations */
+@media (max-width: 992px) {
+    .hero-content {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-image-wrapper {
+        margin-top: 2rem;
+    }
+}
+
